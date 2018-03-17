@@ -237,6 +237,10 @@
     <Compile Include="Migrations\ApplicationUserMigrations\201803172029467_Initial Application Migration.Designer.cs">
       <DependentUpon>201803172029467_Initial Application Migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\ApplicationUserMigrations\201803172038119_SeedinUser.cs" />
+    <Compile Include="Migrations\ApplicationUserMigrations\201803172038119_SeedinUser.Designer.cs">
+      <DependentUpon>201803172038119_SeedinUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\ApplicationUserMigrations\Configuration.cs" />
     <Compile Include="Migrations\ProductMigrations\201803172030266_Initial Product Migration.cs" />
     <Compile Include="Migrations\ProductMigrations\201803172030266_Initial Product Migration.Designer.cs">
@@ -337,6 +341,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\ApplicationUserMigrations\201803172029467_Initial Application Migration.resx">
       <DependentUpon>201803172029467_Initial Application Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ApplicationUserMigrations\201803172038119_SeedinUser.resx">
+      <DependentUpon>201803172038119_SeedinUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\ProductMigrations\201803172030266_Initial Product Migration.resx">
       <DependentUpon>201803172030266_Initial Product Migration.cs</DependentUpon>
