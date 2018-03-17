@@ -1,4 +1,5 @@
 ﻿using ProductServer.DAL;
+using ProductServer.DTO;
 using ProductServer.Models.ProductModels;
 using System;
 using System.Collections.Generic;
@@ -54,7 +55,7 @@ namespace ProductServer.Controllers.API
         // Task 2
         [HttpPost]
         [Route("add/SupplierProduct")]
-        public async Task<Product> postProductSupplier(ProductDTO newProduct)
+        public async Task<Product> postProductSupplier(ProductDto newProduct)
         {
             // Here we get a Product DTO and create a new product based on the DTO 
             // with associated supplier 
@@ -65,14 +66,14 @@ namespace ProductServer.Controllers.API
                 new Product
                 {
                     Description = newProduct.Description,
-                    associatedSupplier = new Supplier
+                    assocSupplier = new Supplier
                     {
                         Address = newProduct.Supplier.Address,
                         Name = newProduct.Supplier.Name
                     },
                     Price = newProduct.Price,
                     Quantity = newProduct.Quantity,
-                    ReorderLevel = newProduct.ReorderLevel
+                    ReOrderLevel = newProduct.ReOrderLevel
                 });
             return inserted;
         }
@@ -86,7 +87,7 @@ namespace ProductServer.Controllers.API
 
         [HttpGet]
         [Route("get/SupplierWithProducts/Sname/{name}")]
-        public SupplierDTO GetSupplierWithProducts(string name)
+        public SupplierDto GetSupplierWithProducts(string name)
         {
             // This query is long winded because the navigation propoerty only goes from Product  to Supplier.
             // Two way navigation or more natural navigation from Supplier to Product Master to Detail would yield 
@@ -98,25 +99,25 @@ namespace ProductServer.Controllers.API
             if (supplier != null)
             {
                 // Construct Supplier DTO. Auto Mapper would be good here.
-                SupplierDTO sDTO = new SupplierDTO
+                SupplierDto sDTO = new SupplierDto
                 {
                     ID = supplier.ID,
                     Name = supplier.Name,
                     Address = supplier.Address,
-                    Products = new List<ProductDTO>()
+                    Products = new List<ProductDto>()
                 };
                 // 
-                var products = (context as IProductRepository).getEntities().Result.ToList().Where(p => p.SupplierID == supplier.ID);
+                var products = (context as IProductRepository).getEntities().Result.ToList().Where(p => p.SupplierID == supplier.SupplierID);
                 foreach (var p in products)
                 {
-                    sDTO.Products.Add(new ProductDTO
+                    sDTO.Products.Add(new ProductDto
                     {
-                        ProductId = p.ProductId,
+                        ProductID = p.ProductID,
                         Description = p.Description,
                         SupplierID = p.SupplierID,
                         Price = p.Price,
                         Quantity = p.Quantity,
-                        ReorderLevel = p.ReorderLevel
+                        ReOrderLevel = p.ReOrderLevel
                     });
                 }
                 return sDTO;
