@@ -1,0 +1,10 @@
+﻿Create a code first database context called AttendanceDB based on the Model Given and seed appropriate data. 
+
+enable-migrations -ContextTypeName ProductServer.Models.ProductModels.ProductDbContext -MigrationsDirectory Migrations\ProductMigrations
+enable-migrations -ContextTypeName ProductServer.Models.ApplicationDbContext -MigrationsDirectory Migrations\ApplicationUserMigrations
+
+add-migration –ConfigurationTypeName  ProductServer.Migrations.ApplicationUserMigrations.Configuration "Initial Application Migration"
+add-migration –ConfigurationTypeName  ProductServer.Migrations.ProductMigrations.Configuration "Initial Product Migration"
+
+update-database –ConfigurationTypeName  ProductServer.Migrations.ApplicationUserMigrations.Configuration 
+update-database –ConfigurationTypeName  ProductServer.Migrations.ProductMigrations.Configuration
