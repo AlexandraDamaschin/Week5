@@ -7,9 +7,11 @@ using System.Threading.Tasks;
 
 namespace ProductServer.DAL
 {
-    interface IProductRepository : IDisposable
+    interface IProductRepository : IRepository<Product>
     {
-        List<Product> GetProducts();
-        Product GetProductByID(int id);
+        Task<IList<Product>> GetReorderList();
+        float GetStockCost(int ProductID);
+        bool CheckStock(int productID, int quantityPurchased);
+        Task<Product> OrderItem(Product p, int Quantity);
     }
 }
