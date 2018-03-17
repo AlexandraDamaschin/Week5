@@ -8,6 +8,7 @@ using System.Web.Http;
 
 namespace ProductServer.Controllers.API
 {
+    //authorise controller to be view by purchsesManager role
     [Authorize(Roles = "Purchases Manager")]
     [RoutePrefix("api/Purchases")]
     public class PurchasesController : ApiController
