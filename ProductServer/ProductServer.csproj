@@ -230,6 +230,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DAL\IProductRepository.cs" />
+    <Compile Include="DAL\IRepository.cs" />
+    <Compile Include="DAL\ISupplier.cs" />
+    <Compile Include="DAL\SupplierProductRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -237,14 +241,14 @@
     <Compile Include="Migrations\ApplicationUserMigrations\201803172029467_Initial Application Migration.Designer.cs">
       <DependentUpon>201803172029467_Initial Application Migration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\ApplicationUserMigrations\201803172038119_SeedinUser.cs" />
-    <Compile Include="Migrations\ApplicationUserMigrations\201803172038119_SeedinUser.Designer.cs">
-      <DependentUpon>201803172038119_SeedinUser.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\ApplicationUserMigrations\Configuration.cs" />
     <Compile Include="Migrations\ProductMigrations\201803172030266_Initial Product Migration.cs" />
     <Compile Include="Migrations\ProductMigrations\201803172030266_Initial Product Migration.Designer.cs">
       <DependentUpon>201803172030266_Initial Product Migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ProductMigrations\201803172055222_ChangedType.cs" />
+    <Compile Include="Migrations\ProductMigrations\201803172055222_ChangedType.Designer.cs">
+      <DependentUpon>201803172055222_ChangedType.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ProductMigrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -342,11 +346,11 @@
     <EmbeddedResource Include="Migrations\ApplicationUserMigrations\201803172029467_Initial Application Migration.resx">
       <DependentUpon>201803172029467_Initial Application Migration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\ApplicationUserMigrations\201803172038119_SeedinUser.resx">
-      <DependentUpon>201803172038119_SeedinUser.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\ProductMigrations\201803172030266_Initial Product Migration.resx">
       <DependentUpon>201803172030266_Initial Product Migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\ProductMigrations\201803172055222_ChangedType.resx">
+      <DependentUpon>201803172055222_ChangedType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

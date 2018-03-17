@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProductServer.DAL
 {
-    interface ISupplier : IRepository<Supplier>
+    interface ISupplierRepository : IRepository<Supplier>
     {
         Task<IList<Product>> SupplierProducts();
     }

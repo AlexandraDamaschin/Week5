@@ -22,7 +22,7 @@ namespace ProductServer.Models.ProductModels
         public int Quantity { get; set; }
 
         [Display(Name = "Re-Order Level")]
-        public string ReOrderLevel { get; set; }
+        public int ReOrderLevel { get; set; }
 
         [Display(Name = "Price")]
         public float Price { get; set; }
