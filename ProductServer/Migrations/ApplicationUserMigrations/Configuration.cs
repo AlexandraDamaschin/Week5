@@ -18,7 +18,7 @@ namespace ProductServer.Migrations.ApplicationUserMigrations
 
         protected override void Seed(ProductServer.Models.ApplicationDbContext context)
         {
-          //  SeedUsers(context);
+            SeedUsers(context);
             //SeedRoles(context);
         }
 
@@ -27,7 +27,14 @@ namespace ProductServer.Migrations.ApplicationUserMigrations
         {
             c.Users.AddOrUpdate(
               p => p.Id,
-              new ApplicationUser { UserName = "fflyntstone", Email = "flintstone.fred@itsligo.ie", PasswordHash = "Flint$12345" }
+              new ApplicationUser
+              {
+                  UserName = "fflyntstone",
+                  Email = "flintstone.fred@itsligo.ie",
+                  PasswordHash = "Flint$12345",
+                  FirstName = "Fred",
+                  SecondName = "Flintstone"
+              }
             );
 
             c.SaveChanges();
