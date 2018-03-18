@@ -11,19 +11,26 @@ namespace ProductServer.Controllers.API
     //authorise controller to be view by purchsesManager role
     [Authorize(Roles = "Purchases Manager")]
 
+    //set certain route 
     [RoutePrefix("api/Purchases")]
     public class PurchasesController : ApiController
     {
 
         private SupplierProductRepository context;
+        //if using mapper do this:
         //private MapperConfiguration supConfig, prodConfig;
 
         public PurchasesController()
         {
+            //set context to SupplierProductRepository base on ProductDbContext
             context = new SupplierProductRepository(new ProductDbContext());
+            //using mapper do this:
+            //map the product and the supplier
             //prodConfig = new MapperConfiguration(cfg => cfg.CreateMap<Product, ProductDTO>());
             //supConfig = new MapperConfiguration(cfg => cfg.CreateMap<Supplier, SupplierDTO>());
         }
+
+        //testing purpose
         // For injection
         public PurchasesController(SupplierProductRepository ctx)
         {
