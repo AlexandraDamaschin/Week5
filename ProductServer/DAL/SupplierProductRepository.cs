@@ -106,8 +106,10 @@ namespace ProductServer.DAL
             return supplier;
         }
 
+        //method implemented for IProductRepository
         async Task<IList<Product>> IProductRepository.GetReorderList()
         {
+            //reorder by quantity
             return await context.Products.Where(p => p.Quantity <= p.ReOrderLevel).ToListAsync();
         }
 

@@ -9,6 +9,7 @@ namespace ProductServer.DAL
 {
     interface IProductRepository : IRepository<Product>
     {
+        //method implemented in SupplierProductRepository 
         Task<IList<Product>> GetReorderList();
         float GetStockCost(int ProductID);
         bool CheckStock(int productID, int quantityPurchased);
