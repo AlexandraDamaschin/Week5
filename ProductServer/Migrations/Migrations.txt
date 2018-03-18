@@ -4,6 +4,7 @@ enable-migrations -ContextTypeName ProductServer.Models.ProductModels.ProductDbC
 enable-migrations -ContextTypeName ProductServer.Models.ApplicationDbContext -MigrationsDirectory Migrations\ApplicationUserMigrations
 
 add-migration –ConfigurationTypeName  ProductServer.Migrations.ApplicationUserMigrations.Configuration "Initial Application Migration"
+add-migration –ConfigurationTypeName  ProductServer.Migrations.ApplicationUserMigrations.Configuration
 add-migration –ConfigurationTypeName  ProductServer.Migrations.ProductMigrations.Configuration "Initial Product Migration"
 
 update-database –ConfigurationTypeName  ProductServer.Migrations.ApplicationUserMigrations.Configuration 
