@@ -2,8 +2,10 @@
 
 namespace CommonObjects
 {
+    //Paul said: No need for automapper as long as 
     class DTOobjects
     {
+        //this fileds match the Product Model
         public class ProductDTO
         {
             public int ProductId { get; set; }
@@ -21,6 +23,7 @@ namespace CommonObjects
             }
         }
 
+        //this fileds match the Supplier Model
         public class SupplierDTO
         {
             public int ID { get; set; }
