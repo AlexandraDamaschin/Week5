@@ -13,6 +13,7 @@ namespace ProductServer.DAL
     {
         private ProductDbContext context;
 
+        //contructor where we pass the product db context
         public SupplierProductRepository(ProductDbContext context)
         {
             this.context = context;
