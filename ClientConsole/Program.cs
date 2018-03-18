@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+//our frontend program like angular one
 namespace ClientConsole
 {
     class Program
