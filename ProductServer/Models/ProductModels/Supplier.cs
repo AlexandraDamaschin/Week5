@@ -20,6 +20,6 @@ namespace ProductServer.Models.ProductModels
 
         [Display(Name = "Address")]
         public string Address { get; set; }
-        
+        //no navigation from Supplier to product
     }
 }

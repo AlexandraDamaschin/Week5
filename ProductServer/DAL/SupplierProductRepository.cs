@@ -18,11 +18,14 @@ namespace ProductServer.DAL
         {
             this.context = context;
         }
+
+        //
         async Task<IList<Product>> ISupplierRepository.SupplierProducts()
         {
             // As connection only goes from Products to Supplier we have to do it from the 
             // Product side but the supplier will be included
-            // This would not be great in production (we would implement the navigation on Both sides)
+            // This would not be great in production
+            //(we would implement the navigation on Both sides)
             return await context.Products.Include("associatedSupplier").ToListAsync();
         }
 

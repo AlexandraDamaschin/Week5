@@ -31,6 +31,7 @@ namespace ProductServer.Models.ProductModels
         [Display(Name = "Supplier ID")]
         public int SupplierID { get; set; }
 
+        //navigation one side: just from Product to Supplier
         public virtual Supplier assocSupplier { get; set; }
     }
 }

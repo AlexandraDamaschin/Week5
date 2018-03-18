@@ -1,14 +1,12 @@
 ﻿using ProductServer.Models.ProductModels;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace ProductServer.DAL
 {
     interface ISupplierRepository : IRepository<Supplier>
     {
+        //method implemented in SupplierProductRepository
         Task<IList<Product>> SupplierProducts();
     }
 }
