@@ -18,8 +18,8 @@ namespace ProductServer.Migrations.ApplicationUserMigrations
 
         protected override void Seed(ProductServer.Models.ApplicationDbContext context)
         {
-            SeedUsers(context);
-            //SeedRoles(context);
+            // SeedUsers(context);
+           // SeedRoles(context);
         }
 
         //seed users 
@@ -55,14 +55,20 @@ namespace ProductServer.Migrations.ApplicationUserMigrations
             roleManager.Create(new IdentityRole { Name = "PurchasesManager" });
 
             //assign user to that role
-            context.Users.AddOrUpdate(u => u.Email, new ApplicationUser
-            {
-                UserName = "fflyntstone",
-                Email = "flintstone.fred@itsligo.ie",
-                PasswordHash = new PasswordHasher().HashPassword("Flint$12345")
-            });
+            context.Users.AddOrUpdate(u => u.Email,
+                new ApplicationUser
+                {
+                    UserName = "fflyntstone",
+                    Email = "flintstone.fred@itsligo.ie",
+                    EmailConfirmed = true,
+                    SecurityStamp = Guid.NewGuid().ToString(),
+                    PasswordHash = new PasswordHasher().HashPassword("Flint$12345"),
+                    FirstName = "Fred",
+                    SecondName = "Flinstone",
+                });
+            context.SaveChanges();
 
-            //execption
+            //add fred as a purchasesManager
             ApplicationUser purchasesManager = manager.FindByEmail("flintstone.fred@itsligo.ie");
             if (purchasesManager != null)
             {
