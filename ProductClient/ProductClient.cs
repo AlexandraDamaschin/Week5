@@ -19,6 +19,7 @@ namespace ProductClient
             static public string Token = "";
             static public AUTHSTATUS Status = AUTHSTATUS.NONE;
 
+            //login based on username(is actually email in this case) and password
             static public bool login(string username, string password)
             {
                 using (var client = new HttpClient())
@@ -70,3 +71,4 @@ namespace ProductClient
 
         }
     }
+}
